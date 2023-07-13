@@ -1,0 +1,7 @@
+{
+  "player1": { "name": "Ahmed", "score": 3000, "streak": 2000 },
+  "player2": { "name": "Ahmed", "score": 3000, "streak": 2000 },
+  "player3": { "name": "Ahmed", "score": 3000, "streak": 2000 },
+  "player4": { "name": "Ahmed", "score": 3000, "streak": 2000 },
+  "player5": { "name": "Ahmed", "score": 3000, "streak": 2000 }
+}

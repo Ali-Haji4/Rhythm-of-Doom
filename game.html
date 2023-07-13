@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rythm of Doom</title>
+    <link rel="stylesheet" href="styles/game.css" />
+  </head>
+  <body>
+    <!-- <div class="load-screen">
+      <h1 id="loading"></h1>
+    </div> -->
+    <div class="load-screen">
+      <video playsinline autoplay muted loop>
+        <source src="videos/homeScreen.mp4" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay">
+        <h1 id="loading"></h1>
+      </div>
+    </div>
+
+    <div class="game-screen">
+      <div class="game-information">
+        <h2 id="sequence-number">Sequence:</h2>
+        <h2 id="sequence-score">Score:</h2>
+        <h2 id="sequence-mistakes">Mistakes:</h2>
+        <h2 id="sequence-streak">Streak:</h2>
+        <h2 id="timer">Time Remaining:</h2>
+      </div>
+      <!-- <div class="progress">
+        <div class="progress-done"></div>
+      </div> -->
+      <!-- <div class="inputContainer">
+        <div>
+          <h3>Value</h3>
+          <input class="input" type="number" />
+        </div>
+        <div>
+          <h3>Max Value</h3>
+          <input class="maxInput" type="number" />
+        </div>
+      </div> -->
+      <div id="doom-damage"></div>
+      <div class="enemy-container">
+        <img src="images/enemy1.png" alt="" class="enemy-img" />
+        <div class="enemy-stats">
+          <span id="enemy-name"></span>
+          <span id="enemy-hp"></span>
+        </div>
+      </div>
+      <div class="sequence-images">
+        <!-- <img src="/images/arrowLeft.png" alt="left arrow" class="arrow-img" />
+          <img src="/images/arrowUp.png" alt="up arrow" class="arrow-img" />
+          <img
+            src="/images/arrowRight.png"
+            alt="right arrow"
+            class="arrow-img"
+          />
+          <img src="/images/arrowDown.png" alt="down arrow" class="arrow-img" /> -->
+      </div>
+    </div>
+    <div class="game-over-onLoad">
+      <span class="game-over-text">GAME OVER</span>
+      <p class="game-over-p">
+        Amid the flames and chaos, the hero's valiant struggle against the
+        demonic horde reached its tragic conclusion. Overwhelmed and
+        outnumbered, their last stand proved futile. As darkness claimed their
+        soul, the world mourned the loss of a stalwart defender. Though their
+        journey ends here, their sacrifice will forever serve as a beacon of
+        hope, inspiring others to rise against the encroaching shadows. <br />
+        Game over, but their legacy lives on.
+      </p>
+      <button id="leaderboard-navigate-btn">Go To Leaderboards</button>
+    </div>
+    <div class="game-victory-onLoad">
+      <span class="game-victory-text">VICTORY</span>
+      <p class="game-victory-p">
+        Amidst the chaos, the hero fought an epic battle against the relentless
+        demon horde. Their blade danced with deadly grace, cutting through the
+        darkness. With every strike, the hero's courage grew, until the demons
+        were finally vanquished. As the dust settled, the hero stood tall,
+        victorious, the embodiment of undying valor.
+      </p>
+      <button id="leaderboard-victory-navigate-btn">Go To Leaderboards</button>
+    </div>
+    <div class="game-over-screen">
+      <div class="game-over-information"></div>
+
+      <div id="leaderboard">
+        <div class="game-over-title">
+          <img src="images/game-logo.png" alt="game-logo" />
+          <h1>The Rhythm of Doom</h1>
+          <img src="images/game-logo.png" alt="game-logo" />
+        </div>
+        <table class="player-gameplay-information-table">
+          <!-- <tr class="game-over-information-header">
+            <th colspan="3">Gameplay information</th>
+          </tr> -->
+          <tr>
+            <th>Highscore</th>
+            <th>Highest Streak</th>
+            <th>Sequences Completed</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td id="final-score" class="sequences"></td>
+            <td id="final-streak" class="sequences"></td>
+            <td id="final-number" class="sequences"></td>
+            <td id="final-status" class="sequences"></td>
+          </tr>
+          <!-- <tr>
+            <th colspan="3">
+              <form action="" method="post" class="leaderboard-form">
+                <label for="name">Enter Your Name to Save Your Score:</label
+                ><br />
+                <input type="text" id="name" name="name" />
+                <button type="submit" class="submit-btn">Submit</button>
+              </form>
+            </th>
+          </tr> -->
+        </table>
+        <!-- <table>
+          <tr class="table-header">
+            <th>Number</th>
+            <th>Player</th>
+            <th>Highscore</th>
+            <th>Highest Streak</th>
+            <th>Sequences Completed</th>
+          </tr>
+          <tr>
+            <td class="number">1</td>
+            <td class="name">Lee Taeyong</td>
+            <td class="points">258.242</td>
+            <td class="sequences">258.242</td>
+            <td class="sequences">258.242</td>
+          </tr>
+          <tr>
+            <td class="number">2</td>
+            <td class="name">Mark Lee</td>
+            <td class="points">258.242</td>
+            <td class="sequences">258.242</td>
+            <td class="sequences">258.242</td>
+          </tr>
+          <tr>
+            <td class="number">3</td>
+            <td class="name">Xiao Dejun</td>
+            <td class="points">258.223</td>
+            <td class="sequences">258.242</td>
+            <td class="sequences">258.242</td>
+          </tr>
+          <tr>
+            <td class="number">4</td>
+            <td class="name">Qian Kun</td>
+            <td class="points">258.212</td>
+            <td class="sequences">258.242</td>
+            <td class="sequences">258.242</td>
+          </tr>
+          <tr>
+            <td class="number">5</td>
+            <td class="name">Johnny Suh</td>
+            <td class="points">258.208</td>
+            <td class="sequences">258.242</td>
+            <td class="sequences">258.242</td>
+          </tr>
+        </table> -->
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="script/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.arrow-img {
+  height: 100px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* LOAD SCREEN STYLING */
+.load-screen {
+  border: 2px solid #000;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.load-screen h1 {
+  font-size: 50vh;
+  color: white;
+  font-family: "Sirin Stencil", cursive;
+}
+
+.game-screen {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../images/wallpaper.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.game-information {
+  display: flex;
+  justify-content: space-around;
+  background-color: orange;
+}
+
+.sequence-images {
+  position: absolute;
+  bottom: 0px;
+
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* -------------ENEMY STYLING ----------------*/
+.enemy-img {
+  margin-top: 50px;
+  width: 70%;
+  animation: breathing 3.5s ease-out infinite normal;
+}
+
+.enemy-stats {
+  width: 30%;
+  margin-bottom: 100px;
+  background: rgb(226, 91, 46, 0.7);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.enemy-container {
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 80vw;
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+
+  100% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+.progress {
+  background-color: grey;
+  border-radius: 20px;
+  height: 30px;
+  width: 300px;
+}
+
+.progress-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: repeating-linear-gradient(
+    to left,
+    #d21312,
+    #ed2b2a,
+    #f15a59
+  );
+  box-shadow: 0 5px 5px -6px gray, 0 3px 7px white;
+  border-radius: 20px;
+  color: #fff;
+  height: 100%;
+  width: 0;
+  transition: 1s ease 0.3s;
+}
+
+.inputContainer {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+/* -------------LEADERBOARD PAGE ----------------*/
+
+.game-over-screen {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+
+  /* background-image: url("/images/leaderboard-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #141a39;
+  cursor: default;
+  box-shadow: 9px 9px 9px 9px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+tr {
+  /* transition: all 0.2s ease-in-out; */
+  border-radius: 0.2rem;
+  background: linear-gradient(-45deg, #e04e14 0%, #6b1906 74%);
+  background-size: 400% 400%;
+  animation: gradient 10s ease-in infinite;
+
+  background-color: #7a2830;
+}
+
+tr:not(:first-child):hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
+  box-shadow: 0px 5px 15px 8px #e4e7fb;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(1) {
+  color: #fff;
+}
+
+td {
+  height: 0.5rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+th {
+  height: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.number {
+  width: 1rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.name {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.points {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sequences {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.points:first-child {
+  width: 10rem;
+}
+
+#leaderboard {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.table-header {
+  /* background: linear-gradient(-45deg, #7a2830 0%, #de3e56 74%);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite; */
+
+  /* background-color: #7a2830; */
+}
+
+.table-header th {
+  color: white;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game-over-information-header {
+}
+
+.game-over-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(-45deg, #e04e14 0%, #6b1906 74%);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  background-color: #7a2830;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+  letter-spacing: 0.2cm;
+  font-weight: bolder;
+}
+
+.game-over-title img {
+  height: 4rem;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.game-over-information-header h1 {
+  color: white;
+}
+
+.player-gameplay-information-table {
+  margin-bottom: 30px;
+}
+
+.leaderboard-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-btn {
+  border: none;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.submit-btn:hover {
+  background-color: coral;
+  transition: all 0.5s ease-in-out;
+}
+
+/*-----GETTING DAMAGED ANIMATION*/
+
+#doom-damage {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.do-damage {
+  background-color: red;
+  animation: 0.4s doom-damage forwards;
+}
+
+@keyframes doom-damage {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.damage-shake {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+.enemy-hp {
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/*-----GAME OVER ON LOAD-------*/
+.game-over-onLoad {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: red;
+  background-image: url("/images/gameOver.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.game-over-text {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  animation: fadeIn 3s linear;
+}
+
+.game-over-p {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  letter-spacing: 0.1cm;
+  color: white;
+  margin-right: 50px;
+  margin-left: 50px;
+  animation: fadeIn 5s linear;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#leaderboard-navigate-btn {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#leaderboard-navigate-btn:hover {
+  cursor: pointer;
+}
+
+/*------ GAMER VICTORY ON LOAD -------*/
+.game-victory-onLoad {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  background-image: url("/images/victory.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.game-victory-text {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  animation: fadeIn 3s linear;
+}
+
+.game-victory-p {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  letter-spacing: 0.1cm;
+  color: white;
+  margin-top: 30rem;
+  margin-right: 50px;
+  margin-left: 50px;
+  animation: fadeIn 5s linear;
+}
+
+#leaderboard-victory-navigate-btn {
+  margin: 0;
+  position: relative;
+  margin-top: 30px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 20px;
+}
+#leaderboard-victory-navigate-btn:hover {
+  cursor: pointer;
+}
