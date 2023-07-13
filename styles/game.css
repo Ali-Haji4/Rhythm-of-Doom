@@ -59,27 +59,127 @@ video {
   background-image: url("../images/wallpaper.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Sirin Stencil", cursive;
 }
 
 .game-information {
   display: flex;
   justify-content: space-around;
+  /* background-color: orange; */
+  color: white;
+  align-items: center;
+}
+
+#timer {
+  color: black;
+  border: 2px solid black;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   background-color: orange;
+  height: 50px;
+  width: 50px;
+}
+
+#sequence-number,
+#sequence-score,
+#sequence-mistakes,
+#sequence-streak {
+  background-color: rgb(226, 91, 46, 0.7);
+  padding: 0 30px;
+  border-radius: 15px;
+  color: white;
 }
 
 .sequence-images {
   position: absolute;
   bottom: 0px;
-
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 30px;
 }
 
+@media (max-width: 375px) {
+  .arrow-img {
+    height: 50px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  .game-information {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0 10px;
+    background-color: orange;
+    font-size: 14px;
+    text-shadow: 2px 2px black;
+    background: rgb(224, 78, 20, 0.5);
+    color: white;
+  }
+
+  #sequence-number {
+    flex: 30%;
+  }
+
+  #sequence-score {
+    flex: 30%;
+  }
+  #sequence-mistakes {
+    flex: 30%;
+  }
+  #timer {
+    flex: 45%;
+  }
+  #sequence-streak {
+    flex: 45%;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 700px) {
+  .arrow-img {
+    height: 80px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  .game-information {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0 10px;
+    background-color: orange;
+    font-size: 14px;
+    text-shadow: 2px 2px black;
+    background: rgb(224, 78, 20, 0.5);
+    color: white;
+  }
+
+  #sequence-number {
+    flex: 30%;
+  }
+
+  #sequence-score {
+    flex: 30%;
+  }
+  #sequence-mistakes {
+    flex: 30%;
+  }
+  #timer {
+    flex: 45%;
+  }
+  #sequence-streak {
+    flex: 45%;
+  }
+}
+
 /* -------------ENEMY STYLING ----------------*/
 .enemy-img {
-  margin-top: 50px;
+  margin-top: 0px;
   width: 70%;
   animation: breathing 3.5s ease-out infinite normal;
 }
@@ -435,6 +535,7 @@ th {
   margin-right: 50px;
   margin-left: 50px;
   animation: fadeIn 5s linear;
+  font-family: "Sirin Stencil", cursive;
 }
 @keyframes fadeIn {
   0% {
@@ -493,10 +594,11 @@ th {
   padding-top: 10px;
   letter-spacing: 0.1cm;
   color: white;
-  margin-top: 30rem;
+  margin-top: 26rem;
   margin-right: 50px;
   margin-left: 50px;
   animation: fadeIn 5s linear;
+  font-family: "Sirin Stencil", cursive;
 }
 
 #leaderboard-victory-navigate-btn {

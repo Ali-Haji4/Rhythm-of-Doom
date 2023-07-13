@@ -2,7 +2,8 @@
 
 ---
 
-#--Rhythm of Doom--
+# Rhythm of Doom
+
 (A Game created using Javascript)
 
 <img src="images/screenshots/homePage.png"></img>
@@ -13,6 +14,10 @@
 2. CSS
 3. Javascript
 4. jQuery
+
+## Deployment
+
+The game is deployed on GitHub Pages and it can be found here: https://pages.git.generalassemb.ly/ali-haji4/Project_1/.
 
 ## Features:
 
@@ -27,6 +32,8 @@
 - Defeat upon running out of time, or making numerous mistakes
 - Screen flashes red upon taking damage by making a mistake
 
+## Gameplay Interface
+
 ## How To Play:
 
 <img src="images/screenshots/sequence.png"></img>
@@ -36,14 +43,14 @@
 3. Once the sequence is completed, the sequence is shuffled and a new one shows up
 4. The game continues giving the player random sequences until either the lost or the win conditions are met
 
-# Lose Conditions:
+## Lose Conditions:
 
-1. Running out of Time
-2. Making Numerous mistakes during the sequences
+- Running out of Time
+- Making Numerous mistakes during the sequences
 
-# Win Condition:
+## Win Condition:
 
-1. Defeat the enemies before time runs out
+- Defeat the enemies before time runs out
 
 ---
 

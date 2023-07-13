@@ -170,7 +170,7 @@ function countdown(duration) {
 
     var seconds = Math.floor((distance % (1000 * 60)) / 1000); // Calculate the seconds
 
-    $("#timer").text(`Time Remaining: ` + seconds);
+    $("#timer").text(seconds);
 
     if (distance <= 0 && victory == false) {
       clearInterval(interval); // Stop the countdown when the time is up
@@ -226,7 +226,7 @@ $(document).ready(function () {
     $(".sequence-images").html(stringOfSequences);
     $("#enemy-name").text(monster1Name);
     $("#enemy-hp").text(`${monster1Hp} HP`);
-    countdown(20);
+    // countdown(22);
   }, 4000); // 5000 milliseconds = 5 seconds
 });
 
