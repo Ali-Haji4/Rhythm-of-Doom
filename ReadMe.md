@@ -34,6 +34,8 @@ The game is deployed on GitHub Pages and it can be found here: https://pages.git
 
 ## Gameplay Interface
 
+<img src="images/screenshots/interface.png"></img>
+
 ## How To Play:
 
 <img src="images/screenshots/sequence.png"></img>
