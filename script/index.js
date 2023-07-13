@@ -226,7 +226,7 @@ $(document).ready(function () {
     $(".sequence-images").html(stringOfSequences);
     $("#enemy-name").text(monster1Name);
     $("#enemy-hp").text(`${monster1Hp} HP`);
-    // countdown(22);
+    countdown(40);
   }, 4000); // 5000 milliseconds = 5 seconds
 });
 
