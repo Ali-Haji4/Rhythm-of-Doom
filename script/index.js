@@ -5,6 +5,7 @@ let upPressed = false;
 let downPressed = false;
 let spacePressed = false;
 
+//Input Arrays
 const inputs = [
   "arrowLeft",
   "arrowRight",
@@ -33,7 +34,7 @@ const darkInputImages = [
 ];
 
 //sounds
-const damageAudio = new Audio("sounds/damage.wav");
+const damageAudio = new Audio("sounds/demonGrunt.mp3");
 
 //shuffle
 function shuffle(array) {
@@ -96,11 +97,11 @@ let gameOver = false;
 //Monster information
 let monster1Name = "Gorlock The Destroyer";
 let monster1Damage = 10;
-let monster1Hp = 10;
+let monster1Hp = 70;
 
 let monster2Name = "Asmodean The Cruel";
 let monster2Damage = 15;
-let monster2Hp = 200;
+let monster2Hp = 130;
 
 //Player information
 let playerDamage = 10;
@@ -141,7 +142,7 @@ function loseByTime() {
 }
 
 function loseByMistakes() {
-  if (mistakes >= 4 && victory == false) {
+  if (mistakes >= 3 && victory == false) {
     console.log("you lost by mistakes");
     $(".game-screen").hide();
     $(".game-over-onLoad").show();
@@ -226,7 +227,7 @@ $(document).ready(function () {
     $(".sequence-images").html(stringOfSequences);
     $("#enemy-name").text(monster1Name);
     $("#enemy-hp").text(`${monster1Hp} HP`);
-    countdown(40);
+    countdown(47);
   }, 4000); // 5000 milliseconds = 5 seconds
 });
 
@@ -275,7 +276,7 @@ function followingSequence() {
       $("#enemy-name").text(monster2Name);
       $(".enemy-img").attr("src", "images/enemy2.png");
       $("#enemy-hp").text(`${monster2Hp} HP`);
-      if (monster2Hp <= 170) {
+      if (monster2Hp <= 0) {
         //THIS IS FOR LOSING
         // $(".game-over-onLoad").toggle();
         // $(".game-screen").toggle();
